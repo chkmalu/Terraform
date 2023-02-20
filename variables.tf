@@ -1,16 +1,13 @@
-variable "sub-name" {
-  description = "name of the subnet"
-  
+variable "cidr_block" {
+  description = "ip adderess block"  
 }
-
-variable "cidr-block" {
-    description = "cidr block for vpc & subnet"
-    type = list(string)
-  
+variable "cidr_subnet" {
+  description = "subnet of cidr" 
 }
-
-variable "tag-name" {
-    description = "resource name"
-    type = map(string)
-  
+variable "tag_name" {
+  description = "prefix name" 
 }
+variable "key_path" {
+  description = "key_path"  
+}
+variable "image_name" {}
