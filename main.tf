@@ -26,3 +26,8 @@ module "webserver_mod" {
   key_path = var.key_path
   image_name = var.image_name
 }
+
+output "pub_ip" {
+  value = module.webserver_mod.pub_ip
+  
+}
