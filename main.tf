@@ -27,7 +27,7 @@ module "webserver_mod" {
   image_name = var.image_name
 }
 
-output "pub_ip" {
-  value = module.webserver_mod.pub_ip
+# output "pub_ip" {
+#   value = module.webserver_mod.pub_ip
   
-}
+# }
