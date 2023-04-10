@@ -9,6 +9,7 @@ resource "aws_vpc" "myapp-vpc" {
     Name = "${var.tag_name}-vpc"
   }
 }
+#import modules
 
 module "subnet_mod" {
   source = "./modules/subnet"
