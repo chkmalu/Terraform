@@ -47,15 +47,21 @@ resource "aws_instance" "TF-server" {
   security_groups = [aws_default_security_group.dev-sg.id]
   associate_public_ip_address = true
   key_name = aws_key_pair.dev_kp.key_name
-  count = 1
+  count = 3
   root_block_device {
     volume_type = "gp2"
   volume_size = "20"
   }
-  user_data = file("deployment_script.sh")
+  # user_data = file("deployment_script.sh")
   tags = {
     Name = "${var.tag_name}-instance"
   }
+  
+   provisioner "local-exec" {
+    working_dir = "/home/malu/Desktop/devops/ansible/"
+    command = "ansible-playbook -i host.aws_ec2.yaml install_docker.yaml"
+  }
+
 }
 
 resource "aws_key_pair" "dev_kp" {
