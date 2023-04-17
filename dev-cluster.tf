@@ -18,10 +18,10 @@ module "eks" {
     one = {
       name = "dev-node"
 
-      instance_types = ["t2.micro"]
+      instance_types = ["t2.medium"]
 
       min_size = 1
-      max_size = 3
+      max_size = 4
       desired_size = 2
     }
 
