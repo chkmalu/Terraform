@@ -47,7 +47,7 @@ resource "aws_instance" "TF-server" {
   security_groups = [aws_default_security_group.dev-sg.id]
   associate_public_ip_address = true
   key_name = aws_key_pair.dev_kp.key_name
-  count = 1
+  count = 2
   root_block_device {
     volume_type = "gp2"
   volume_size = "20"
